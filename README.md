@@ -168,9 +168,25 @@ REACT_APP_API_URL=http://localhost:5000
 
 For production, update `REACT_APP_API_URL` to your deployed backend URL.
 
+## Data Persistence
+
+The application now uses **Redis** for persistent data storage on the backend, which means:
+
+- **Your strings are permanently saved** - All entered strings persist across server restarts and redeployments
+- **Reliable storage** - Redis provides fast, production-ready data persistence
+- **No data loss** - Your string list will always be available when you return to the app
+- **Real-time updates** - Changes are immediately saved to Redis
+
+### How It Works
+
+1. When you add a string, it's instantly saved to the Redis database
+2. When you delete a string, it's immediately removed from Redis
+3. When you refresh the page or revisit the app, all your strings are loaded from Redis
+4. The data survives server maintenance, updates, and restarts
+
 ## Notes
 
-- The backend uses in-memory storage, so data will persist during the server session but will be lost on server restart
-- For production use, consider implementing a database (PostgreSQL, MongoDB, etc.)
+- Data is now **permanently stored** in Redis and will never be lost due to server restarts
 - The app includes error handling and loading states
 - CORS is configured to allow cross-origin requests from the frontend
+- All string operations (add/delete/view) are backed by persistent Redis storage
