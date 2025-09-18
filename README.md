@@ -1,3 +1,7 @@
+# A learning project
+
+I'm learning to code [VIDE CODING] and this is the front end part of my own first fullstack app 
+
 # String List App
 
 A simple full-stack React application that allows users to enter strings and view them in a persistent list. The backend is designed to be deployed on Render and the frontend on Vercel.
